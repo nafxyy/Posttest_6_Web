@@ -13,6 +13,8 @@
 
     // $member = $mem;
 
+
+
     if (isset($_POST['update'])){
         $nama = $_POST['nama'];
         $nomor = $_POST['nomor'];
@@ -20,7 +22,6 @@
         $alamat = $_POST['Alamat'];
         $jenis_kelamin = $_POST['jenis_kelamin'];
         $tier = $_POST['member'];
-        $durasimem = date('Y-m-d', strtotime("next year"));
 
         $format_file = $_FILES['foto']['name'];
         $tmp_name = $_FILES['foto']['tmp_name'];
@@ -35,7 +36,7 @@
             move_uploaded_file($tmp_name, 'gambar/' . $rename);
             $sql = "UPDATE datamember SET nama ='$nama', nomor ='$nomor', umur = '$umur', alamat ='$alamat', kelamin = '$jenis_kelamin', tier = '$tier', profile = '$rename' WHERE id=$id";
             $result = mysqli_query($conn, $sql);
-        }
+
 
         if ($result){
             echo "
@@ -51,6 +52,7 @@
             </script>";
         }
     }
+}
 ?>
 
 
@@ -84,7 +86,7 @@
 
         <b id = "titleform">EDIT DATA MEMBERSHIP</b>
         <div class = "containerform">
-            <form action = <?php echo "update.php?id=$id"?> method = "POST" name = "form1">
+            <form action = "" method = "POST" name = "form1"  enctype="multipart/form-data">
                 <table id = "formtable">
                     <tr>
                         <td>Nama Lengkap</td>
@@ -135,7 +137,7 @@
                     <tr>
                         <td>Foto Profile</td>
                         <td>:</td>
-                        <td><input type="file" name="foto" id = 'foto' ></td>
+                        <td><input type="file" name="foto"></td>
                     </tr>
 
                         <div class="box_bawah">

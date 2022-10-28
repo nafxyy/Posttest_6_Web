@@ -56,7 +56,7 @@
                     <td>Jenis Membership</td>
                     <td>Foto Profile</td>
                     <td>Edit / Delete Data</td>
-                    <td>Durasi Member</td>
+                    <td>Member Dibuat</td>
                 </tr>
                 <?php if(isset($member)){foreach($member as $mem):?>
                     <tr>
@@ -67,7 +67,7 @@
                     <td><?php echo $mem['alamat']; ?></td>
                     <td><?php echo $mem['kelamin']; ?></td>
                     <td><?php echo $mem['tier']; ?></td>
-                    <td><?php echo '<image src="gambar/'.$mem['profile'].'" style="width:100px; padding-top: 5px; padding-bottom: 2px;">'?></td>
+                    <td><?php echo '<image src="gambar/'.$mem['profile'].'" style="width:100px; height:120px; padding-top: 5px; padding-bottom: 2px;">'?></td>
                     <td align="center" style = "font-size: 0.8cm";>
                         <a href="update.php?id=<?php echo $mem['id'];?>"><i class="fa fa-pencil"></i></a>
                         <a href="delete.php?id=<?php echo $mem['id'];?>"><i class="fa fa-trash" style = "margin-left: 20px; "size": 10px></i></a>

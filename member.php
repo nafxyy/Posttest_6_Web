@@ -17,7 +17,7 @@
         $alamat = $_POST['Alamat'];
         $jeniskelamin = $_POST['jenis_kelamin'];
         $tier = $_POST['member'];
-        $durasimem = date('Y-m-d', strtotime("next year"));
+        $durasimem = date('Y-m-d', strtotime("today"));
 
         $format_file = $_FILES['foto']['name'];
         $tmp_name = $_FILES['foto']['tmp_name'];
